@@ -1,0 +1,11 @@
+name: VM5 Transfer CI Guard
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo guard-start && sleep 180 && echo guard-success
