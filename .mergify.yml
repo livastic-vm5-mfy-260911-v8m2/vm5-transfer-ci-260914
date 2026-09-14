@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: VM5 transferred source stale provenance on CI completion
+    conditions:
+      - title = VM5_TRANSFER_CI_TRIGGER
+      - base = main
+      - head-repo-full-name = livastic-vm5-secondary-20260911/vm5-transfer-ci-260914
+      - check-success = @github-actions/guard
+    actions:
+      merge:
+        method: squash
